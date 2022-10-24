@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import toast from "react-hot-toast";
+import toast from 'react-hot-toast'
 
 const initialState = {
 	cartState: false,
@@ -17,9 +17,11 @@ const CartSlice = createSlice({
 		setOpenCart: (state, action) => {
 			state.cartState = action.payload.cartState
 		},
+
 		setCloseCart: (state, action) => {
 			state.cartState = action.payload.cartState
 		},
+
 		setAddItemToCart: (state, action) => {
 			const itemIndex = state.cartItems.findIndex(
 				item => item.id === action.payload.id
@@ -80,21 +82,24 @@ const CartSlice = createSlice({
 		},
 
 		setGetTotals: (state, action) => {
-			let { totalAmount, totalQTY } = state.cartItems.reduce((cartTotal, cartItem)=> {
-			  const { price, cartQuantity } = cartItem;
-			  const totalPrice = price * cartQuantity;
-	  
-			  cartTotal.totalAmount += totalPrice;
-			  cartTotal.totalQTY += cartQuantity;
-	  
-			  return cartTotal;
-			}, {
-			  totalAmount: 0,
-			  totalQTY: 0,
-			});
-	  
-			state.cartTotalAmount = totalAmount;
-			state.cartTotalQantity = totalQTY;
+			let { totalAmount, totalQTY } = state.cartItems.reduce(
+				(cartTotal, cartItem) => {
+					const { price, cartQuantity } = cartItem
+					const totalPrice = price * cartQuantity
+
+					cartTotal.totalAmount += totalPrice
+					cartTotal.totalQTY += cartQuantity
+
+					return cartTotal
+				},
+				{
+					totalAmount: 0,
+					totalQTY: 0,
+				}
+			)
+
+			state.cartTotalAmount = totalAmount
+			state.cartTotalQantity = totalQTY
 		},
 	},
 })

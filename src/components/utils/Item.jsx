@@ -87,6 +87,7 @@ const Item = ({
 						type='button'
 						className='bg-white/90 blur-effect-theme button-theme
                         p-0.5 shadow shadow-sky-200'
+						onClick={() => {onAddToCart(); onCartToggle();}}
 					>
 						{btn}
 					</button>

@@ -93,7 +93,7 @@ const Navbar = () => {
 							: 'bg-slate-100 text-slate-900 shadow-slate-900'
 					}`}
 								>
-									0
+									{totalQTY}
 								</div>
 							</button>
 						</li>
