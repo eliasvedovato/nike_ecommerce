@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronDoubleLeftIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { ChevronDoubleLeftIcon } from '@heroicons/react/24/solid'
 
 const CartCount = ({ onCartToggle, totalQTY, onClearCartItems }) => {
 	return (
@@ -17,7 +17,7 @@ const CartCount = ({ onCartToggle, totalQTY, onClearCartItems }) => {
 							Your Cart 
 							<span
 								className='bg-theme-cart rounded px-1 py-0.5 
-                            text-slate-100 font-normal text-sm'
+                            text-slate-100 font-normal text-sm ml-2'
 							>
 								({totalQTY} Items)
 							</span>
@@ -27,9 +27,9 @@ const CartCount = ({ onCartToggle, totalQTY, onClearCartItems }) => {
 				<button
 					type='button'
 					onClick={onClearCartItems}
-					className='rounded-full bg-theme-cart active:scale-90 p-0.5'
+					className='rounded-full p-1 text-white bg-theme-cart active:scale-90'
 				>
-					<XMarkIcon className='w-5 h-5 text-white stroke-[2]' />
+					Clear
 				</button>
 			</div>
 		</>
